@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+    tools {
+        jdk 'myjava'
+        maven 'mymaven'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'Cloning...'
+                // Use withCredentials to provide Github credentials
+                withCredentials([usernamePassword(credentialsId: 'Edosaig', usernameVariables: 'USERNAME', passwordVariables; 'password')]){
+                    script {
+                        // Clone the private GITHUB repository using the provided credentials 
+                        git credentialsId: 'Edosaig', url: "https://github.com/Edosaig/DevopsBasics.git"
+                    }
+
+                }
+            }
+        }
+    
+        stage('Compile') {
+            steps {
+                echo 'Compiling...'
+                sh 'mvn compile'
+            }
+        }
+
+        stage('CodeReview') {
+            steps {
+                echo 'Code Review...'
+                sh 'mvn pmd:pmd'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                echo 'Packaging...'
+                sh 'mvn package'
+            }
+        }
+}   }
+
