@@ -4,8 +4,6 @@ pipeline {
         jdk 'JAVA'
         maven 'Maven'
     }  
-
-    agent any
     
     stages {
         stage('Checkout') {
