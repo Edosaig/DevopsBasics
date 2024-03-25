@@ -1,7 +1,10 @@
+pipeline {
+    agent any
+    tools {
         jdk 'myjava'
         maven 'mymaven'
-    }
-    
+    }  
+
     agent any
     
     stages {
