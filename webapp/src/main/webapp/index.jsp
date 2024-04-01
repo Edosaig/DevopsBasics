@@ -44,8 +44,8 @@
 
 <body>
     <div>
-        <h1>A demo that the CD/CD pipeline is working</h1>
-        <p>For additional info, click <a href="#">click here</a> theitern.com!</p>
+        <h1>Welcome to my CI/CD</h1>
+        <p>For additional info, click <a href="#">click here</a> github.com/Edosaig!</p>
     </div>
 </body>
 
