@@ -55,5 +55,5 @@ output "public_ips" {
   value = aws_instance.server[*].public_ip
 }
 
-*****    Run the command below from cli
+*****    Run the command below from cli.       This create a new instance without destroying existing instance
 terraform apply -target=aws_instance.new_server    
